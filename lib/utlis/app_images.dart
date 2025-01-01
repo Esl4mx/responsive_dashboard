@@ -2,9 +2,13 @@
 class Assets {
   Assets._();
   
-  /// Assets for imagesCardBackground
-  /// assets/images/card_background.svg
-  static const String imagesCardBackground = "assets/images/card_background.svg";
+  /// Assets for imagesCardBackground2
+  /// assets/images/card_background2.png
+  static const String imagesCardBackground2 = "assets/images/card_background2.png";
+
+  /// Assets for imagesCardIcon
+  /// assets/images/card_icon.svg
+  static const String imagesCardIcon = "assets/images/card_icon.svg";
 
   /// Assets for imagesCardReceive
   /// assets/images/card_receive.svg

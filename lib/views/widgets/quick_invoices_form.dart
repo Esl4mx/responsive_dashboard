@@ -40,7 +40,7 @@ class QuiclInvoicesForm extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 16,
+              width: 12,
             ),
             Expanded(
               child: TitleAndTextField(
