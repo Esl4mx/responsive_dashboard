@@ -5,8 +5,10 @@ import 'package:admin_dashboard/views/widgets/cards_page_view.dart';
 import 'package:admin_dashboard/views/widgets/custom_dot.dart';
 import 'package:admin_dashboard/views/widgets/custom_drawer.dart';
 import 'package:admin_dashboard/views/widgets/my_card.dart';
+import 'package:admin_dashboard/views/widgets/my_card_and_transaction_section.dart';
 import 'package:admin_dashboard/views/widgets/my_card_section.dart';
 import 'package:admin_dashboard/views/widgets/quick_invoices.dart';
+import 'package:admin_dashboard/views/widgets/transaction_history.dart';
 import 'package:flutter/material.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
@@ -26,7 +28,7 @@ class DashboardDesktopLayout extends StatelessWidget {
         SizedBox(
           width: 24,
         ),
-        Expanded(flex: 2, child: MyCardSection())
+        Expanded(flex: 2, child: MyCardAndTransactionSection()),
       ],
     );
   }
