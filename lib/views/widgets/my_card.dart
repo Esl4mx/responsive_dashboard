@@ -13,14 +13,17 @@ class MyCard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             image: const DecorationImage(
-                image: AssetImage(Assets.imagesCardBackground2)),
+              fit: BoxFit.fill,
+              image: AssetImage(Assets.imagesCardBackground2),
+            ),
             color: const Color(0xff4EB7F2),
             borderRadius: BorderRadius.circular(12)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              contentPadding: EdgeInsets.only(left: 31, right: 42, top: 16),
+              contentPadding:
+                  const EdgeInsets.only(left: 31, right: 42, top: 16),
               title: Text(
                 "Name Card",
                 style: AppStyels.styleRegular16.copyWith(color: Colors.white),
