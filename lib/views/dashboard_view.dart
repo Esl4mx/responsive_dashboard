@@ -1,3 +1,4 @@
+import 'package:admin_dashboard/utlis/size_config.dart';
 import 'package:admin_dashboard/views/widgets/adaptive_layout.dart';
 import 'package:admin_dashboard/views/widgets/custom_drawer.dart';
 import 'package:admin_dashboard/views/widgets/dashboard_desktop_layout.dart';
@@ -18,7 +19,7 @@ class _DashboardViewState extends State<DashboardView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: MediaQuery.sizeOf(context).width < 800
+      appBar: MediaQuery.sizeOf(context).width < SizeConfig.tablet
           ? AppBar(
               elevation: 0,
               leading: IconButton(
@@ -29,8 +30,9 @@ class _DashboardViewState extends State<DashboardView> {
               ),
             )
           : null,
-      drawer:
-          MediaQuery.sizeOf(context).width < 800 ? const CustomDrawer() : null,
+      drawer: MediaQuery.sizeOf(context).width < SizeConfig.tablet
+          ? const CustomDrawer()
+          : null,
       backgroundColor: const Color(0xffF7F9FA),
       body: AdaptiveLayout(
           mobileLayout: (context) => const DashBoardMobileLayout(),

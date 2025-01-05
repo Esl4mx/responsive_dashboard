@@ -35,43 +35,48 @@ class _AllExpensessItemListViewState extends State<AllExpensessItemListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
-        // children: itemModel
-        //     .map((e) => Expanded(child: AllExpensessItem(itemModel: e)))
-        //     .toList(),
-        children: itemModel.asMap().entries.map(
-      (e) {
-        int index = e.key;
-        var item = e.value;
-        if (index == 1) {
-          return Expanded(
-            child: GestureDetector(
-              onTap: () {
-                updateIndex(index);
-              },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: AllExpensessItem(
-                  itemModel: item,
-                  isSelected: selectedIndex == index,
-                ),
-              ),
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(0);
+            },
+            child: AllExpensessItem(
+              itemModel: itemModel[0],
+              isSelected: selectedIndex == 0,
             ),
-          );
-        } else {
-          return Expanded(
-            child: GestureDetector(
-              onTap: () {
-                updateIndex(index);
-              },
-              child: AllExpensessItem(
-                itemModel: item,
-                isSelected: selectedIndex == index,
-              ),
+          ),
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(1);
+            },
+            child: AllExpensessItem(
+              itemModel: itemModel[1],
+              isSelected: selectedIndex == 1,
             ),
-          );
-        }
-      },
-    ).toList());
+          ),
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(2);
+            },
+            child: AllExpensessItem(
+              itemModel: itemModel[2],
+              isSelected: selectedIndex == 2,
+            ),
+          ),
+        )
+      ],
+    );
   }
 
   void updateIndex(int index) {
@@ -80,3 +85,28 @@ class _AllExpensessItemListViewState extends State<AllExpensessItemListView> {
     });
   }
 }
+
+// return Row(
+    //     // children: itemModel
+    //     //     .map((e) => Expanded(child: AllExpensessItem(itemModel: e)))
+    //     //     .toList(),
+    //     children: itemModel.asMap().entries.map(
+    //   (e) {
+    //     int index = e.key;
+    //     var item = e.value;
+    //     return Expanded(
+    //       child: GestureDetector(
+    //         onTap: () {
+    //           updateIndex(index);
+    //         },
+    //         child: Padding(
+    //           padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
+    //           child: AllExpensessItem(
+    //             itemModel: item,
+    //             isSelected: selectedIndex == index,
+    //           ),
+    //         ),
+    //       ),
+    //     );
+    //   },
+    // ).toList());

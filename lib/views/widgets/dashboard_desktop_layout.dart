@@ -1,15 +1,7 @@
-import 'package:admin_dashboard/views/widgets/all_dots_indicator.dart';
-import 'package:admin_dashboard/views/widgets/all_expensess.dart';
 import 'package:admin_dashboard/views/widgets/allexpensess_andd_quick_invoices_section.dart';
-import 'package:admin_dashboard/views/widgets/cards_page_view.dart';
-import 'package:admin_dashboard/views/widgets/custom_dot.dart';
 import 'package:admin_dashboard/views/widgets/custom_drawer.dart';
 import 'package:admin_dashboard/views/widgets/income_section.dart';
-import 'package:admin_dashboard/views/widgets/my_card.dart';
 import 'package:admin_dashboard/views/widgets/my_card_and_transaction_section.dart';
-import 'package:admin_dashboard/views/widgets/my_card_section.dart';
-import 'package:admin_dashboard/views/widgets/quick_invoices.dart';
-import 'package:admin_dashboard/views/widgets/transaction_history.dart';
 import 'package:flutter/material.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
@@ -26,28 +18,41 @@ class DashboardDesktopLayout extends StatelessWidget {
           width: 32,
         ),
         Expanded(
-            flex: 2,
-            child: Padding(
-              padding: EdgeInsets.only(top: 40),
-              child: AllExpensessAndQuickInoicesSection(),
-            )),
-        SizedBox(
-          width: 24,
-        ),
-        Expanded(
-            flex: 1,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 40,
-                ),
-                MyCardAndTransactionSection(),
-                SizedBox(
-                  height: 24,
-                ),
-                Expanded(child: IncomeSection())
+            flex: 3,
+            child: CustomScrollView(
+              slivers: [
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Row(
+                    children: [
+                      Expanded(
+                          flex: 2,
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 40),
+                            child: AllExpensessAndQuickInoicesSection(),
+                          )),
+                      SizedBox(
+                        width: 24,
+                      ),
+                      Expanded(
+                          flex: 1,
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 40,
+                              ),
+                              MyCardAndTransactionSection(),
+                              SizedBox(
+                                height: 24,
+                              ),
+                              Expanded(child: IncomeSection())
+                            ],
+                          )),
+                    ],
+                  ),
+                )
               ],
-            )),
+            ))
       ],
     );
   }

@@ -16,8 +16,11 @@ class InActiveDrawerItem extends StatelessWidget {
     return ListTile(
       leading: SvgPicture.asset(drawerItemModel.img),
       title: Text(
+        overflow: TextOverflow.ellipsis,
         drawerItemModel.title,
-        style: AppStyels.styleRegular16,
+        style: AppStyels.styleRegular16(
+          context,
+        ),
       ),
     );
   }
@@ -40,8 +43,9 @@ class ActiveDrawerItem extends StatelessWidget {
         color: const Color(0xff4EB7F2),
       ),
       title: Text(
+        overflow: TextOverflow.ellipsis,
         drawerItemModel.title,
-        style: AppStyels.styleBold16,
+        style: AppStyels.styleBold16(context),
       ),
     );
   }

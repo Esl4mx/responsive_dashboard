@@ -15,9 +15,9 @@ class OptionsRange extends StatelessWidget {
           borderRadius: BorderRadius.circular(12)),
       child: Row(
         children: [
-          const Text(
+          Text(
             "Monthly",
-            style: AppStyels.styleMedium16,
+            style: AppStyels.styleMedium16(context),
           ),
           const SizedBox(
             width: 18,
